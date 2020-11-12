@@ -1,0 +1,2 @@
+- Remover o password do usuário a onde ocorrer o retorno de dados que estiver exibindo o usuário
+- Fazer o restante das rotas
