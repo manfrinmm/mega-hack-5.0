@@ -20,8 +20,18 @@ export default class SessionsController {
 
     var user = auth.user;
 
-    // Precisa remover a password
-    return { token, user };
+    const userWithoutPassword = {
+      id: user?.id,
+      company_id: user?.company_id,
+      name: user?.name,
+      email: user?.email,
+      cnpj: user?.cnpj,
+      cnae: user?.cnae,
+      remember_me_token: user?.remember_me_token,
+      created_at: user?.created_at,
+      updated_at: user?.updated_at,
+    };
+    return { token, user: userWithoutPassword };
   }
 
   public async show({}: HttpContextContract) {}
