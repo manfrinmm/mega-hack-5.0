@@ -17,12 +17,23 @@ export const Container = styled.div`
   }
 
   nav {
-    margin-left: 32px;
-    line-height: 2;
+    display: flex;
+    justify-content: space-between;
 
-    a {
-      font-size: 24px;
+    margin-left: 32px;
+
+    div {
       margin-right: 32px;
+
+      a {
+        font-size: 24px;
+
+        transition: color 0.2s;
+
+        &:hover {
+          color: ${(props) => props.theme.colors.primary};
+        }
+      }
     }
   }
 `;

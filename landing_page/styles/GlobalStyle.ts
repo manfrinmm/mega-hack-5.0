@@ -22,7 +22,15 @@ export default createGlobalStyle`
     color:${(props) => props.theme.colors.text};
 
     background: ${(props) => props.theme.colors.background};
-    
+
+    background: url("/assets/background-style.svg") no-repeat top;
+    background-size: cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   h1 {

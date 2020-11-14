@@ -12,9 +12,15 @@ const Header: React.FC = () => {
         <Image src="/name.svg" width={174} height={34} />
       </header>
       <nav>
-        <Link href="#product">Nosso Produto</Link>
-        <Link href="#why-us">Por que nos escolher</Link>
-        <Link href="#comments">Nossos Clientes</Link>
+        <div>
+          <Link href="#product">Nosso Produto</Link>
+        </div>
+        <div>
+          <Link href="#why-us">Por que nos escolher</Link>
+        </div>
+        <div>
+          <Link href="#comments">Nossos Clientes</Link>
+        </div>
       </nav>
       <Button>Use agora</Button>
     </Container>
