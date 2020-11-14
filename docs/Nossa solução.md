@@ -107,6 +107,8 @@ e) Elemento Futuro: O quão a solução apresentada demonstra elementos ligados 
 - Qual será o custo para manter cada modalidade?
 - Qual será os planos?
 
+- Integrar com open bank também para ter uma maior agilidade nas informações
+
 ## B2B (Pago - recorrência)
 
 - Alguma empresa já implementa isso?
@@ -126,3 +128,15 @@ e) Elemento Futuro: O quão a solução apresentada demonstra elementos ligados 
 ### Minha visão
 
 - Achei muita coisa voltada para a contabilidade, porem acredito que o cliente também tenha acesso a isso junto ao seu contador.
+
+## Pitch
+
+- O problema que o projeto quer resolver? Mostrar como muitos apenas criam e levam as coisas do jeito que tá / Mostrar que várias tem a chance de quebrar porque não conhecem ferramentas que ajudam a se programar ou não sao bem
+- Qual é o tamanho do mercado?
+- A solução? Mostrar como a nossa ferramenta cura as dores acima
+- Qual é o produto ou serviço que este projeto entrega
+- Qual é o modelo de negócios, ou como este projeto vai monetizar
+- Qual é a estratégia de penetração de mercado
+- Quem são os competidores
+- Quem é o time que está desenvolvendo isso ou que está envolvido no projeto
+- Por que agora é o momento ideal? Falar sobre a crescente expansão dos micro/pequenas empresas no brasil.
