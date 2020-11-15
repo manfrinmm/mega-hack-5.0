@@ -24,32 +24,12 @@ export default class TransactionsController {
       .first();
 
     if (!balance) {
-      return balance;
+      throw new AppError("Balancete não encontrado");
     }
-
-    const {
-      transactions_gross_revenue,
-      transactions_total_spend,
-    } = balance.transactions.reduce(
-      (accumulator, transaction) => {
-        if (transaction.value > 0) {
-          accumulator.transactions_gross_revenue += transaction.value;
-        } else {
-          accumulator.transactions_total_spend -= transaction.value;
-        }
-
-        return accumulator;
-      },
-      {
-        transactions_gross_revenue: 0,
-        transactions_total_spend: 0,
-      },
-    );
 
     return {
       ...balance.toJSON(),
-      transactions_gross_revenue,
-      transactions_total_spend,
+      ...balance.transaction_get_values,
     };
   }
 
@@ -75,6 +55,14 @@ export default class TransactionsController {
       day_register_at,
       value,
     });
+
+    // if (value > 0) {
+    //   balance.gross_revenue += value;
+    // } else {
+    //   balance.total_spend += value;
+    // }
+
+    // await balance.save();
 
     return transaction;
   }

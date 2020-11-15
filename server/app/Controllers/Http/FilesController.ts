@@ -1,10 +1,10 @@
 import Application from "@ioc:Adonis/Core/Application";
 import { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
+import Database from "@ioc:Adonis/Lucid/Database";
 import AppError from "App/Exceptions/AppError";
 import Balance from "App/Models/Balance";
 import crypto from "crypto";
 import csv from "csv-parse/lib";
-import { parseISO } from "date-fns";
 import fs from "fs";
 
 export default class FilesController {
@@ -62,8 +62,6 @@ export default class FilesController {
 
       const fullYear = year.length < 4 ? `20${year}` : year;
 
-      console.log({ tran: transaction.date, fullYear });
-
       const reference_month = `${transaction.date.split("/")[1]}/${fullYear}`;
 
       return {
@@ -95,26 +93,42 @@ export default class FilesController {
 
     const months = Object.entries(transactions_group_by_month);
 
-    const registered = await Promise.all(
-      months.map(async month => {
-        // console.log(month[1]);
-        const balance = await Balance.firstOrCreate(
-          {
-            reference_month: month[0],
-          },
-          {
-            gross_revenue: 0,
-            percentage_of_taxes: 0,
-            total_spend: 0,
-            user_id: auth.user?.id,
-          },
+    var registered = {};
+
+    await Database.transaction(async trx => {
+      try {
+        registered = await Promise.all(
+          months.map(async month => {
+            const balance = await Balance.firstOrCreate(
+              {
+                reference_month: month[0],
+              },
+              {
+                gross_revenue: 0,
+                percentage_of_taxes: 0,
+                total_spend: 0,
+                user_id: auth.user?.id,
+              },
+              { client: trx },
+            );
+
+            balance.useTransaction(trx);
+
+            await balance.related("transactions").createMany(month[1] as any);
+
+            return balance;
+          }),
         );
 
-        await balance.related("transactions").createMany(month[1] as any);
+        await trx.commit();
+      } catch (error) {
+        await trx.rollback();
 
-        return balance;
-      }),
-    );
+        console.log(error);
+
+        throw new AppError("Erro ao cadastrar");
+      }
+    });
 
     return registered;
 

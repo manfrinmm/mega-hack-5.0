@@ -15,45 +15,17 @@ export default class BalancesController {
       .where("user_id", user.id)
       .preload("transactions");
 
-    if (!balances) {
-      return balances;
-    }
-
     const balances_formatted = balances.map(balance => {
-      const {
-        transactions_gross_revenue,
-        transactions_total_spend,
-      } = balance.transactions.reduce(
-        (accumulator, transaction) => {
-          if (transaction.value > 0) {
-            accumulator.transactions_gross_revenue += transaction.value;
-          } else {
-            accumulator.transactions_total_spend -= transaction.value;
-          }
-
-          return accumulator;
-        },
-        {
-          transactions_gross_revenue: 0,
-          transactions_total_spend: 0,
-        },
-      );
-
-      const balance_formatted = {
+      return {
         id: balance.id,
         user_id: balance.user_id,
         reference_month: balance.reference_month,
         gross_revenue: balance.gross_revenue,
         percentage_of_taxes: balance.percentage_of_taxes,
         total_spend: balance.total_spend,
+        ...balance.transaction_get_values,
         created_at: balance.created_at,
         updated_at: balance.updated_at,
-      };
-
-      return {
-        ...balance_formatted,
-        transactions_gross_revenue,
-        transactions_total_spend,
       };
     });
 
@@ -102,50 +74,7 @@ export default class BalancesController {
     return balance;
   }
 
-  public async show({ request, auth }: HttpContextContract) {
-    const { reference_month } = request.get();
-
-    const user = auth.user;
-
-    if (!user) {
-      throw new AppError("User not found");
-    }
-
-    var balance = await Balance.query()
-      .where("reference_month", reference_month)
-      .where("user_id", user.id)
-      .preload("transactions")
-      .first();
-
-    if (!balance) {
-      return balance;
-    }
-
-    const {
-      transactions_gross_revenue,
-      transactions_total_spend,
-    } = balance.transactions.reduce(
-      (accumulator, transaction) => {
-        if (transaction.value > 0) {
-          accumulator.transactions_gross_revenue += transaction.value;
-        } else {
-          accumulator.transactions_total_spend -= transaction.value;
-        }
-
-        return accumulator;
-      },
-      {
-        transactions_gross_revenue: 0,
-        transactions_total_spend: 0,
-      },
-    );
-
-    return {
-      ...balance.toJSON(),
-      transactions_gross_revenue,
-      transactions_total_spend,
-    };
-  }
+  public async show({}: HttpContextContract) {}
 
   public async update({}: HttpContextContract) {}
 

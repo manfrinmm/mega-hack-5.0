@@ -27,6 +27,32 @@ export default class Balance extends BaseModel {
   })
   public transactions: HasMany<typeof Transaction>;
 
+  public get transaction_get_values() {
+    const {
+      transactions_gross_revenue,
+      transactions_total_spend,
+    } = this.transactions.reduce(
+      (accumulator, transaction) => {
+        if (transaction.value > 0) {
+          accumulator.transactions_gross_revenue += transaction.value;
+        } else {
+          accumulator.transactions_total_spend -= transaction.value;
+        }
+
+        return accumulator;
+      },
+      {
+        transactions_gross_revenue: 0,
+        transactions_total_spend: 0,
+      },
+    );
+
+    return {
+      transactions_gross_revenue,
+      transactions_total_spend,
+    };
+  }
+
   @column.dateTime({ autoCreate: true })
   public created_at: DateTime;
 
