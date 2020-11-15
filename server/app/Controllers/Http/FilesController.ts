@@ -4,6 +4,7 @@ import AppError from "App/Exceptions/AppError";
 import Balance from "App/Models/Balance";
 import crypto from "crypto";
 import csv from "csv-parse/lib";
+import { parseISO } from "date-fns";
 import fs from "fs";
 
 export default class FilesController {
@@ -35,28 +36,35 @@ export default class FilesController {
       throw new AppError("Falha ao salvar arquivo no servidor");
     }
 
-    const parse = fs.createReadStream(csvPath).pipe(
-      csv({
-        delimiter: ";",
-        columns: ["description", "value", "date"],
-        from_line: 2,
-        trim: true,
-      }),
-    );
+    let parse;
 
-    parse.on("data", (raw: any) => {
-      datas.push(raw);
-    });
+    try {
+      parse = fs.createReadStream(csvPath).pipe(
+        csv({
+          delimiter: ";",
+          columns: ["description", "value", "date"],
+          from_line: 2,
+          trim: true,
+        }),
+      );
 
-    await new Promise(resolve => parse.on("end", resolve));
+      parse.on("data", (raw: any) => {
+        datas.push(raw);
+      });
 
-    // remover o arquivo depois de lido
-    await fs.promises.unlink(csvPath);
+      await new Promise(resolve => parse.on("end", resolve));
+    } catch (error) {
+      throw new AppError("Erro ao ler o arquivo. Favor, tente novamente!");
+    }
 
     const transactions = datas.map(transaction => {
-      const reference_month = `${transaction.date.split("/")[1]}/${
-        transaction.date.split("/")[2]
-      }`;
+      const year = transaction.date.split("/")[2] as string;
+
+      const fullYear = year.length < 4 ? `20${year}` : year;
+
+      console.log({ tran: transaction.date, fullYear });
+
+      const reference_month = `${transaction.date.split("/")[1]}/${fullYear}`;
 
       return {
         name: transaction.description,
@@ -89,7 +97,7 @@ export default class FilesController {
 
     const registered = await Promise.all(
       months.map(async month => {
-        console.log(month[1]);
+        // console.log(month[1]);
         const balance = await Balance.firstOrCreate(
           {
             reference_month: month[0],
@@ -102,7 +110,8 @@ export default class FilesController {
           },
         );
 
-        balance.related("transactions").createMany(month[1] as any);
+        await balance.related("transactions").createMany(month[1] as any);
+
         return balance;
       }),
     );

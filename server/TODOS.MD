@@ -38,8 +38,8 @@
 - Alterar o balancete:
   - `total_spend` não pode ser menor que a soma da quantidade total dos valores das transações do tipo SAÍDA;
   - `gross_revenue` não pode ser menor que a soma da quantidade total dos valores das transações do tipo ENTRADA;
-- Lançamento
-
+- Lançamento:
+  - Todas as vezes que tiver uma nova transação, somar com o valor atual + transação
 - Transação:
   - Chave para diferênciar:
     - name;
