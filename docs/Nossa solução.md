@@ -140,3 +140,4 @@ e) Elemento Futuro: O quão a solução apresentada demonstra elementos ligados 
 - Quem são os competidores
 - Quem é o time que está desenvolvendo isso ou que está envolvido no projeto
 - Por que agora é o momento ideal? Falar sobre a crescente expansão dos micro/pequenas empresas no brasil.
+- Terminar agradecendo!

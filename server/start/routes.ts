@@ -32,11 +32,24 @@ Route.post("/sessions", "SessionsController.store");
 Route.post("/users", "UsersController.store");
 
 Route.group(() => {
+  Route.post("/indicators", "IndicatorsController.store");
+
+  // Route.post("/indicators", "InterestContentsController.store");
+}).middleware("auth"); // Essa deverá ser uma rota administrativa
+
+Route.group(() => {
   Route.get("/balances", "BalancesController.index");
   Route.post("/balances", "BalancesController.store");
 
+  Route.post("/balances/files", "FilesController.store");
+
+  Route.get("/balances/transactions", "TransactionsController.index");
   Route.post(
     "/balances/:balance_id/transactions",
     "TransactionsController.store",
+  );
+  Route.delete(
+    "/balances/:balance_id/transactions/:transaction_id",
+    "TransactionsController.destroy",
   );
 }).middleware("auth");

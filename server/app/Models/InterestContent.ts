@@ -1,5 +1,7 @@
-import { BaseModel, column } from "@ioc:Adonis/Lucid/Orm";
+import { BaseModel, column, HasMany, hasMany } from "@ioc:Adonis/Lucid/Orm";
 import { DateTime } from "luxon";
+
+import IndicatorInterestContent from "./IndicatorInterestContent";
 
 export default class InterestContent extends BaseModel {
   @column({ isPrimary: true })
@@ -13,6 +15,11 @@ export default class InterestContent extends BaseModel {
 
   @column()
   public link: string;
+
+  @hasMany(() => IndicatorInterestContent, {
+    foreignKey: "interest_content_id",
+  })
+  public IndicatorInterestContents: HasMany<typeof IndicatorInterestContent>;
 
   @column.dateTime({ autoCreate: true })
   public created_at: DateTime;
