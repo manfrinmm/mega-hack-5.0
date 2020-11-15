@@ -39,4 +39,6 @@ Route.group(() => {
     "/balances/:balance_id/transactions",
     "TransactionsController.store",
   );
+
+  Route.get("/gestao", "GestaoController.index");
 }).middleware("auth");
