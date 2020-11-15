@@ -8,22 +8,26 @@
 - Trazer somente o balancete do mes atual e as ultimas 5 transações; - OK
 - Trazer as recomendações dos indicadores;
 
-### Gerenciar lances - OK
+### Gerenciar lances
 
 - Trazer todas transações do mês selecionado: - OK
   - As transações; - OK
   - Somatória de Saída e Entrada; - OK
 - Apagar transação; - OK
+- Ordenar por dia;
 
-### Gestão de caixa - OK
+### Gestão de caixa
 
 - Trazer todas transações do mês selecionado: - OK
   - As transações; - OK
   - Somatória de Saída e Entrada; - OK
+- Ordenar por dia;
 
 ### Tempo de vida (Ainda estamos resolvendo)
 
-- Pegar todos balancetes
+- Pegar todos balancetes;
+- Order eles por ordem cronológica;
+- Saldo em caixa (?)
 
 ## Regras de negócio
 
