@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <Container>
       <Head>
-        <title>Create Next App</title>
+        <title>Star Money</title>
         <link rel="icon" href="/logo.svg" />
       </Head>
 
@@ -26,11 +26,6 @@ export default function Home() {
 
           <aside>
             <img src="/assets/app.svg" alt="app dashboard" />
-            {/* <Image
-              src="/assets/app.svg"
-              width={376}
-              height={648}
-            /> */}
           </aside>
         </Product>
 
