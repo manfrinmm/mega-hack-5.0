@@ -1,0 +1,78 @@
+.--color-background {
+  color: #f0f0f7;
+}
+.--color-background-secondary {
+  color: #063254;
+}
+/* .--color-primary-lighter: #df998c;
+.--color-primary-light: #c9806d;
+.--color-primary: #fa7268;
+.--color-primary-dark: #6b4d57;
+.--color-primary-darker: #13070c;
+.--color-secondary: #316094;
+.--color-secondary-dark: #063254;
+.--color-title-in-primary: #ffffff;
+.--color-text-in-primary: #301f1b;
+.--color-text-title: #5d4846;
+.--color-text-complement: #492a28;
+.--color-text-base: #454545;
+.--color-line-in-white: #e6e6f0;
+.--color-input-background: #f8f8fc;
+.--color-button-text: #ffffff;
+.--color-box-base: #ffffff;
+.--color-box-footer: #fafafc; */
+
+/* .--bg: #f9f9f9;
+.--blue: #007bff;
+.--indigo: #6610f2;
+.--purple: #6f42c1;
+.--pink: #e83e8c; */
+.--red {
+  color: #f76263;
+}
+.--bg-red {
+  background: #f76263;
+}
+/* .--orange: #ffa05b;
+.--yellow: #ffc107; */
+.--green {
+  color: #64f272;
+}
+.--bg-green {
+  background: #64f272;
+}
+.--green-dark {
+  color: #4de988;
+}
+
+.--bg-green-dark {
+  background: #4de988;
+}
+/* 
+.--teal: #20c997;
+.--cyan: #17a2b8;
+.--white: #fff;
+.--gray: #6c757d;
+.--gray-dark: #343a40;
+.--primary: #007bff;
+.--secondary: #6c757d;
+.--success: #28a745;
+.--info: #17a2b8;
+.--warning: #ffc107;
+.--danger: #dc3545;
+/*  */
+
+.--light {
+  color: #f8f9fa;
+}
+
+.--dark {
+  color: #343a40;
+}
+
+/* .--dark-dark: #090909;
+.--breakpoint-xs: 0;
+.--breakpoint-sm: 576px;
+.--breakpoint-md: 768px;
+.--breakpoint-lg: 992px;
+.--breakpoint-xl: 1200px; */

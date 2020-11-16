@@ -1,0 +1,93 @@
+#Home {
+  width: 100vw;
+  height: 100vh;
+}
+
+#Home .home-container {
+  margin: 2.4rem 1.6rem;
+}
+
+#Home .home-container .primary-cards {
+  height: 16rem;
+  border-radius: 1.6rem;
+}
+
+#Home .home-container .primary-cards.revenue {
+  background: var(--color-secondary);
+}
+
+#Home .home-container .primary-cards .icon,
+#Home .home-container .secondary-cards .icon {
+  padding: 1.6rem;
+  padding-bottom: 0;
+  color: var(--light);
+}
+
+#Home .home-container .primary-cards .label {
+  color: var(--light);
+  padding: 1.6rem;
+}
+
+#Home .home-container .primary-cards.revenue .value {
+  color: var(--teal);
+  padding-left: 1.6rem;
+  font-size: 1.6rem;
+}
+
+#Home .home-container .primary-cards.extract {
+  background: var(--color-primary);
+}
+
+#Home .home-container .secondary-cards {
+  height: 11rem;
+  border-radius: 1.6rem;
+}
+
+#Home .home-container .secondary-cards.health {
+  background: var(--green);
+}
+
+#Home .home-container .secondary-cards.pay {
+  background: var(--red);
+}
+
+#Home .home-container .secondary-cards.classes {
+  background: var(--orange);
+}
+
+#Home .home-container .secondary-cards.lifetime {
+  background: var(--cyan);
+}
+
+#Home .home-container .secondary-cards.integration {
+  background: linear-gradient(
+    90deg,
+    var(--color-background-secondary) 0%,
+    var(--color-primary) 100%
+  );
+}
+
+#Home .home-container .secondary-cards .icon {
+  padding: 0.8rem;
+}
+
+#Home .home-container .secondary-cards .hint {
+  color: var(--color-secondary);
+  font-size: 1.25rem;
+  padding: 0.8rem;
+  padding-top: 0;
+}
+
+#Home .home-container .secondary-cards .hint.white {
+  color: var(--light);
+}
+
+#Home .home-container .secondary-cards .description {
+  color: var(--color-secondary);
+  font-size: 1rem;
+  padding: 0 0.8rem;
+}
+
+#Home .home-container .secondary-cards.disabled {
+  opacity: 0.5;
+}

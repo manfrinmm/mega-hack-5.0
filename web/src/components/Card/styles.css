@@ -1,0 +1,47 @@
+#Card {
+  box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+#Card .icon {
+  color: var(--red);
+}
+
+#Card.small {
+  height: 6rem;
+}
+
+#Card.medium {
+  height: 8rem;
+}
+#Card .green {
+  background: var(--green-dark);
+  box-shadow: 5px 0px 4px rgba(27, 27, 27, 0.3);
+}
+
+#Card .red {
+  background: var(--red);
+  box-shadow: 5px 0px 4px rgba(27, 27, 27, 0.3);
+}
+
+#Card .orange {
+  background: var(--orange);
+  box-shadow: 5px 0px 4px rgba(27, 27, 27, 0.3);
+}
+
+#Card .card-title {
+  margin-left: 1.6rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--dark-dark);
+}
+#Card .card-date {
+  margin-left: 1.6rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--dark-dark);
+}
+
+#Card .card-value {
+  color: var(--dark-dark);
+  font-size: 1.4rem;
+}

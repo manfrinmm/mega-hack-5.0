@@ -1,0 +1,46 @@
+#BubbleChart {
+  height: 40vh;
+  background: transparent;
+  position: relative;
+  padding: 1.6rem;
+  padding-top: 3.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+#BubbleChart .bubble {
+  position: absolute;
+  border-radius: 50%;
+  min-height: 80px;
+  min-width: 80px;
+}
+
+#BubbleChart .revenue {
+  background: var(--green);
+  bottom: 1.6rem;
+  bottom: 8vh;
+  right: 25vh;
+}
+
+#BubbleChart .revenue.zindex {
+  z-index: 999;
+  min-height: 80px;
+  min-width: 80px;
+  right: 5vh;
+}
+
+#BubbleChart .cost {
+  background: var(--red);
+  right: 8rem;
+}
+
+#BubbleChart .future {
+  background: var(--orange);
+  bottom: 1.6rem;
+}
+
+#BubbleChart .white {
+  color: var(--light);
+  font-weight: 700;
+  transition: ease-in-out 500ms;
+}

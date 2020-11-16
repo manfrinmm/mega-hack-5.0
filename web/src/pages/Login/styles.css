@@ -1,0 +1,150 @@
+#page-login {
+    width: 100vw;
+    height: 100vh;
+}
+
+.page-login-main main {
+    display: flex;
+    background: var(--color-background-second);
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-login-main main .title {
+    color: var(--color-text-title);
+    font: 600 1.25rem Poppins;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 3.2rem;
+    align-items: center;
+}
+
+.page-login-main main .title .action {
+    color: var(--color-text-title);
+}
+
+.page-login-main main .input-block,
+.page-login-main main .input-block input{
+    margin: 0;
+    border-radius: 0; 
+}
+.page-login-main main fieldset {
+    border: none;
+    width: 80%;
+    margin-bottom: 2.5rem;
+}
+
+.page-login-main main #buttonSignin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 5.6rem;
+    border-radius: 0.8rem;
+    background: var(--color-primary);
+    margin-top: 3.6rem;
+    font: 600 1.8rem Archivo;
+    line-height: 2.8rem;
+    color: var(--color-title-in-primary);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.page-login-main main #buttonSignin:hover {
+    background: var(--color-primary-light);
+}
+
+.page-login-main main .remember-container {
+    display: flex;
+    align-items: center;
+    font: 400 1.3rem Poppins;
+    line-height: 2.6rem;
+    padding-top: 1.5rem;
+}
+
+.page-login-main main .remember-container label {
+    padding-right: 4rem;
+    padding-left: 0.8rem;
+    color: var(--color-text-complement);
+}
+
+.page-login-main main .remember-container .buttonForget {
+    color: var(--color-text-complement);
+    text-decoration: none;
+}
+
+.page-login-main main .remember-container input {
+    background-image: var(--color-secondary);
+}
+
+.page-login-main footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+}
+
+.page-login-main footer div p {
+    font: 400 1.4rem Poppins;
+    line-height: 2.4rem;
+    color: var(--color-text-base);
+}
+
+.page-login-main footer div a {
+    font: 600 1.4rem Poppins;
+    color: var(--color-primary-darker);
+}
+
+.page-login-main footer span {
+    font: 400 1.40rem Poppins;
+    color: var(--color-text-complement);
+}
+
+.page-login-main footer span img {
+    margin-left: 0.8rem;
+}
+
+@media (min-width: 1100px) {
+    #page-login {
+        width: 100%;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        overflow: hidden;
+    }
+    #page-login-content {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    .page-login-main main {
+        margin: 0 auto;
+        max-width: 50rem;
+    }
+    .page-login-main main .title h1{
+        font-size: 3.3rem;
+    }
+    .page-login-main main .remember-container {
+        margin-left: 0rem;
+        font-size: 1.6rem;
+    }
+    .page-login-main main .remember-container label {
+        margin-right: 12rem;
+    }
+    .page-login-main main .remember-container .buttonForget{
+        margin-left: -2rem;
+    }
+    .page-login-main footer {
+        justify-content: space-evenly;
+        position: absolute;
+        bottom: 3.2rem;
+    }
+    .page-login-main footer div p {
+        margin-right: 14rem;
+        padding-left: 1rem;
+    }
+    .page-login-main footer div a {
+        margin-left: 1rem;
+    }
+}

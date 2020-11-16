@@ -1,0 +1,65 @@
+#LifeTime {
+  width: 100vw;
+  height: 100vh;
+}
+
+#LifeTime .table {
+  height: 250px;
+}
+
+#LifeTime .lifetime-title {
+  color: var(--color-text-base);
+  padding: 1.6rem;
+  font-size: 1.6rem;
+}
+
+#LifeTime .aside-info {
+  position: absolute;
+  box-shadow: 10px 10px 6px rgba(27, 27, 27, 0.5);
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  margin-right: 8px;
+  border-right: 1px solid black;
+}
+
+#LifeTime .aside-info p {
+  display: flex;
+  padding-left: 1.6rem;
+  height: 40px;
+  align-items: center;
+  background: #eee;
+}
+
+#LifeTime .header {
+  display: flex;
+  background: #15243e !important;
+  height: 40px;
+  color: #fff;
+  padding-left: 1.6rem;
+  align-items: center;
+}
+
+#LifeTime .balances-table {
+  display: "flex";
+  width: "100%";
+  overflow-x: "auto";
+}
+
+#LifeTime .balances-table p {
+  display: flex;
+  padding-left: 1.6rem;
+  height: 40px;
+  align-items: center;
+  background: #eee;
+  width: 170px;
+}
+
+#LifeTime .blue {
+  background: #cbdfff !important;
+}
+
+#LifeTime .image {
+  width: 100%;
+  padding: 1.6rem;
+}

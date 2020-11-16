@@ -1,0 +1,134 @@
+:root {
+  --color-background: #f0f0f7;
+  --color-background-secondary: #063254;
+  --color-primary-lighter: #df998c;
+  --color-primary-light: #c9806d;
+  --color-primary: #fa7268;
+  --color-primary-dark: #6b4d57;
+  --color-primary-darker: #13070c;
+  --color-secondary: #316094;
+  --color-secondary-dark: #063254;
+  --color-title-in-primary: #ffffff;
+  --color-text-in-primary: #301f1b;
+  --color-text-title: #5d4846;
+  --color-text-complement: #492a28;
+  --color-text-base: #454545;
+  --color-line-in-white: #e6e6f0;
+  --color-input-background: #f8f8fc;
+  --color-button-text: #ffffff;
+  --color-box-base: #ffffff;
+  --color-box-footer: #fafafc;
+
+  --bg: #f9f9f9;
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #f76263;
+  --orange: #ffa05b;
+  --yellow: #ffc107;
+  --green: #64f272;
+  --green-dark: #4de988;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --dark-dark: #090909;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  /* --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace; */
+
+  font-size: 60%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+htm,
+body,
+#root {
+  height: 100vh;
+}
+
+body {
+  background: var(--bg);
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body,
+input,
+button,
+textarea,
+.MuiPaper-root {
+  font: 500 1.6rem Poppins;
+  color: var(--dark) !important;
+}
+
+.container {
+  width: 90vw;
+  max-width: 700px;
+}
+
+#root .MuiSvgIcon-root {
+  font-size: 3.2rem;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 5.6rem;
+  border-radius: 0.8rem;
+  background: var(--color-secondary);
+  margin: 3.2rem 0;
+  font: 600 1.8rem Archivo;
+  line-height: 2.8rem;
+  color: var(--color-title-in-primary) !important;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.button.medium {
+  width: 60%;
+}
+
+.button.medium.left {
+  margin: 0;
+  margin-top: 3.2rem;
+  margin-left: 35%;
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 62.5%;
+  }
+}

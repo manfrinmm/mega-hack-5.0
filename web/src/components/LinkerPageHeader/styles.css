@@ -1,0 +1,33 @@
+#LinkerPageHeader .MuiToolbar-root {
+  background-color: #fafafa;
+}
+
+#LinkerPageHeader .MuiButtonBase-root {
+  font-size: 1.5rem;
+}
+
+#LinkerPageHeader .MuiSvgIcon-root {
+  color: var(--color-primary);
+}
+
+#LinkerPageHeader .liker-page-header__icon-button {
+  padding: 0;
+}
+
+#LinkerPageHeader .liker-page-header__company-name {
+  color: var(--dark);
+  font-size: 1.6rem;
+}
+
+#LinkerPageHeader .MuiToolbar-regular {
+  min-height: 70px;
+}
+
+#LinkerPageHeader .liker-page-header__logo {
+  font-family: "Poppins";
+  color: var(--gray) !important;
+}
+
+#LinkerPageHeader img {
+  height: 40px;
+}

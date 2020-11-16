@@ -1,0 +1,57 @@
+#Integration {
+  width: 100vw;
+  height: 100vh;
+}
+
+.integration-container {
+  padding: 0.8rem;
+}
+
+#Integration .integration-container .integration-title {
+  color: var(--color-text-base);
+  padding: 1.6rem;
+  font-size: 1.6rem;
+}
+
+#Integration .integration-container .integration-description {
+  padding: 1.6rem;
+  font-size: 1.6rem;
+}
+
+#Integration .integration-container input[type="file"] {
+  display: none;
+}
+
+#Integration .integration-container label {
+  padding: 20px 10px;
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #333;
+}
+
+#Integration .integration-container footer {
+  margin-top: 1.6rem;
+}
+
+#Integration .integration-container table {
+  width: 100%;
+}
+
+#Integration .integration-container tr {
+  border: 1px solid gray;
+}
+
+#Integration .integration-container footer thead td {
+  background: gray;
+  color: #fff;
+  padding-left: 0.8rem;
+}
+
+#Integration .integration-container tbody td {
+  padding-left: 0.8rem;
+  background: lightgray;
+}

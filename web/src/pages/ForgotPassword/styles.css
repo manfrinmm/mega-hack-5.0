@@ -1,0 +1,136 @@
+#page-forgot {
+    width: 100vw;
+    height: 100vh;
+}
+
+.page-forgot-main h1{
+    width: 100%;
+    font-size: 2.4rem;
+    padding: 0 3.2rem 1.6rem 3.2rem;
+}
+.page-forgot-main p{
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 0 3.2rem;
+}
+
+.page-forgot-main main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::placeholder {
+    color: var(--color-text-complement);
+    font-size: 2rem;
+}
+
+.page-forgot-main main>div {
+    text-align: left;
+    font: 600 1.25rem Poppins;
+    margin-left: -4rem;
+}
+
+.page-forgot-main main>div h1{
+    color: var(--color-text-title);
+    margin-top: 2rem;
+} 
+
+.page-forgot-main main>div p{
+    color: var(--color-text-base);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 1.3rem;
+} 
+
+#page-forgot-content .top-bar-container {
+    padding: 3.2rem;
+}
+
+#page-forgot-content img.top-bar-icon-back {
+    height: 2rem;
+    background-color: var(--color-primary);
+}
+
+.page-forgot-main main fieldset {
+    border: none;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.page-forgot-main main button {
+    border: 0;
+    width: 80%;
+    height: 5.6rem;
+    border-radius: 0.8rem;
+    margin-top: 1.5rem;
+    background: var(--color-primary);
+    font: 600 1.8rem Archivo;
+    line-height: 2.8rem;
+    color: var(--color-title-in-primary);
+    text-align: center;
+    cursor: pointer;
+}
+
+.page-forgot-main main button:hover {
+    background: var(--color-primary-light);
+}
+
+@media(min-width: 1100px) {
+    #page-forgot {
+        display: flex;
+    }
+
+    #page-forgot-content {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    #page-forgot-content .top-bar-container {
+        position: absolute;
+        top: 0;
+        left: 9.25rem;
+    }
+
+    .page-forgot-main h1{
+        font-size: 3.2rem;
+        padding: 0;
+        padding-bottom: 0.8rem;
+        width: 59%;
+    }
+
+    .page-forgot-main p{
+        text-align: center;
+        margin-bottom: 2.4rem;
+    }
+
+    .page-forgot-main {
+        justify-content: center;
+    }
+    .page-forgot-main main {
+        width: 600px;
+    }
+    .page-forgot-main main>div {
+        text-align: left;
+        margin-left: -32rem;
+    }
+    .page-forgot-main main>div h1{
+        margin-left: 22.5rem;
+        font-size: 3.3rem;
+    } 
+    .page-forgot-main main>div p{
+        margin-left: 22.5rem;
+        font-size: 1.3rem;
+    } 
+    .page-forgot-main main fieldset {
+        border: none;
+        width: 60%;
+    }
+    .page-forgot-main main button {
+        width: 60%;
+    }
+}
