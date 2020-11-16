@@ -102,6 +102,7 @@ export default class FilesController {
             const balance = await Balance.firstOrCreate(
               {
                 reference_month: month[0],
+                user_id: auth.user?.id,
               },
               {
                 gross_revenue: 0,
@@ -131,7 +132,5 @@ export default class FilesController {
     });
 
     return registered;
-
-    // return { file, transactions_formatted, transactions };
   }
 }
