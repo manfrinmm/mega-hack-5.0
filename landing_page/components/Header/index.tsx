@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import Link from "next/link";
 import Image from "next/image";
 import { Button, Container } from "./styles";
 
 const Header: React.FC = () => {
+  const handlePageToApp = useCallback(() => {
+    window.open("http://app.star-money.devmatheus.com/");
+  }, []);
+
   return (
     <Container>
       <header>
@@ -22,7 +26,7 @@ const Header: React.FC = () => {
           <Link href="#comments">Nossos Clientes</Link>
         </div>
       </nav>
-      <Button>Use agora</Button>
+      <Button onClick={handlePageToApp}>Use agora</Button>
     </Container>
   );
 };
